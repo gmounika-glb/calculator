@@ -1,1 +1,65 @@
-<h1>This is a Calculator Application Website</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <!-- Menu (Dark Mode and History Buttons) -->
+            <div class="menu">
+                <div class="history" id="history" aria-label="View History">
+                    <i class="bx bx-history"></i>
+                </div>
+                <div class="dark dark-mode" id="dark" aria-label="Toggle Dark Mode">
+                    <i class="bx bx-moon"></i>
+                </div>
+            </div>
+
+            <!-- Display -->
+            <div class="display" id="display" aria-live="polite" tabindex="0">
+                0
+            </div>
+
+            <!-- Calculator Buttons -->
+            <div class="cal-buttons">
+                <!-- Top Row -->
+                <div class="button" id="clear" data-value="Escape" aria-label="Clear All">C</div>
+                <div class="button operator" data-value="/" aria-label="Divide">/</div>
+                <div class="button operator" data-value="*" aria-label="Multiply">x</div>
+                <div class="button" id="delete" data-value="Backspace" aria-label="Backspace">del</div>
+
+                <!-- Number Rows -->
+                <div class="button number" data-value="7" aria-label="Seven">7</div>
+                <div class="button number" data-value="8" aria-label="Eight">8</div>
+                <div class="button number" data-value="9" aria-label="Nine">9</div>
+                <div class="button operator" data-value="-" aria-label="Subtract">−</div>
+
+                <div class="button number" data-value="4" aria-label="Four">4</div>
+                <div class="button number" data-value="5" aria-label="Five">5</div>
+                <div class="button number" data-value="6" aria-label="Six">6</div>
+                <div class="button operator" data-value="+" aria-label="Add">+</div>
+
+                <div class="button number" data-value="1" aria-label="One">1</div>
+                <div class="button number" data-value="2" aria-label="Two">2</div>
+                <div class="button number" data-value="3" aria-label="Three">3</div>
+                <div class="button equal" data-value="=" aria-label="Calculate Result" style="grid-row: span 2;padding-top: 70%;"">=</div>
+
+                <!-- Bottom Row -->
+                <div class="button number zero" data-value="0" aria-label="Zero" style="grid-column: span 2;">0</div>
+                <div class="button number" data-value="." aria-label="Decimal Point">.</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./script1.js"></script>
+</body>
+
+</html>
