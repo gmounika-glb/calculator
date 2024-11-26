@@ -58,7 +58,7 @@ Here are some common test cases to verify the functionality of the calculator:
 5. **Mode Button**:
    - Clicking of 'm, M' in keyboard you can get dark and light theme (mode button toggle).
    
-5. **Close history Button**:
+6. **Close history Button**:
    - Clicking of 'Esc' M in keyboard you can close the history close button.
 
 ## Not repeating operators
