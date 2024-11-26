@@ -44,8 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (key === 'Enter') handleInput('=');
     // Backspace behavior
     else if (key === 'Backspace') handleInput('Backspace');
+    else if (key === 'Escape') clearHistory();
+    else if (key.toLowerCase() === 'h') showHistory();
+    else if (key.toLowerCase() === 'm') toggleDarkMode();
     // Clear input on Escape
-    else if (key === 'Escape') handleInput('Escape');
+    else if (key === 'Delete') handleInput('Delete');
     // Handle number and operator keys
     else if (/^[0-9+\-*/.=]$/.test(key)) handleInput(key);
     // Highlight the pressed button
@@ -54,7 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Step 5: Main function to handle input
   const handleInput = input => {
-    if (input === 'Escape') {
+    if (
+      display.innerText === 'Cal Error' &&
+      !['delete', 'backspace'].includes(input)
+    ) {
+      currentInput = '';
+    }
+    if (input === 'Delete') {
       currentInput = '';
       // Clear the current input
     } else if (input === 'Backspace') {
@@ -75,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentInput += input;
       }
     } else if (input === '=') {
-      // Calculate resultF
+      // Calculate result
       try {
         // Fix for negative number handling in expressions like 2*-3
         if (isValidExpression(currentInput)) {
@@ -139,12 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create and add a close button to history container
     const closeButton = document.createElement('button');
     closeButton.classList.add('close-btn');
-    closeButton.textContent = 'Close';
-    closeButton.addEventListener('click', () => {
-      historyContainer.remove(); // Close the history container
-    });
+    closeButton.textContent = 'X';
+    closeButton.addEventListener(
+      'click',
+      (clearHistory = () => {
+        historyContainer.remove(); // Close the history container
+      })
+    );
 
-    historyContainer.appendChild(closeButton);
+    historyList.appendChild(closeButton);
     historyContainer.appendChild(historyList);
 
     // Append to the container, or replace the existing history list
@@ -157,24 +169,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // History Button Click Event
-  historyButton.addEventListener('click', () => {
-    if (history.length === 0) {
-      alert('No history available');
-    } else {
-      updateHistory();
-    }
-  });
+  historyButton.addEventListener(
+    'click',
+    (showHistory = () => {
+      if (history.length === 0) {
+        alert('No history available');
+      } else {
+        updateHistory();
+      }
+    })
+  );
 
   // Dark Mode Toggle
-  darkButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    // Toggle the moon/sun icon
-    if (document.body.classList.contains('dark-mode')) {
-      // Change to sun icon
-      darkButton.innerHTML = "<i class='bx bx-sun'></i>";
-    } else {
-      // Change to moon icon
-      darkButton.innerHTML = "<i class='bx bx-moon'></i>";
-    }
-  });
+  darkButton.addEventListener(
+    'click',
+    (toggleDarkMode = () => {
+      document.body.classList.toggle('dark-mode');
+      // Toggle the moon/sun icon
+      if (document.body.classList.contains('dark-mode')) {
+        // Change to sun icon
+        darkButton.innerHTML = "<i class='bx bx-sun'></i>";
+      } else {
+        // Change to moon icon
+        darkButton.innerHTML = "<i class='bx bx-moon'></i>";
+      }
+    })
+  );
 });
