@@ -40,25 +40,32 @@ Here are some common test cases to verify the functionality of the calculator:
    - Expected Output: `16`.
 
 ## keyboard access
-1. **Clear Button**:
-   - Input: Enter `5 + 3` and press `esc` in keyboard.
+1. **Clear display Button**:
+   - Input: Enter `5 + 3` and press `delete` in keyboard.
    - Expected Output: The display should be empty.
 
-1. **Backspace Button**:
+2. **Backspace Button**:
    - Input: Enter `5 + 3` and press `Backspace` in keyboard.
    - Expected Output: The display should be like `5 +'.
 
-1. **Backspace Button**:
+3. **Equal Button**:
    - Input: Enter `5 + 3` and press `=` in keyboard.
    - Expected Output: The display should be like `8'.
 
+4. **History Button**:
+   - Clicking of 'h, H' in keyboard you can get history.
+
+5. **Mode Button**:
+   - Clicking of 'm, M' in keyboard you can get dark and light theme (mode button toggle).
+   
+5. **Close history Button**:
+   - Clicking of 'Esc' M in keyboard you can close the history close button.
+
 ## Not repeating operators
-1. **Clear Button**:
    - Input: Enter `5 +-- 3` and it will take like this '5-3'.
    - Expected Output: The display should be empty.
 
 ## Dark and light theme
-1. **Clear Button**:
    - Input: onclick `moon` and it will toggle to the sun.
    - Expected Output: the display will be sun (light theme) style will appear.
 ---
