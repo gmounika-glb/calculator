@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evaluate on Enter
     if (key === 'Enter') handleInput('=');
     // Backspace behavior
+    else if (key.toLowerCase() === 'i') info();
     else if (key === 'Backspace') handleInput('Backspace');
     else if (key === 'Escape') clearHistory();
     else if (key.toLowerCase() === 'h') showHistory();
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       historyItem.classList.add('history-item');
 
       // Format the history to show input and output together in the format "input=output"
-      historyItem.innerHTML = `<strong>${item.input}</strong> = <span>${item.output}</span>`;
+      historyItem.innerHTML = `<strong>${item.input} </strong>  =  <span> ${item.output}</span>`;
 
       historyList.appendChild(historyItem);
     });
@@ -179,7 +180,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   );
+  // JavaScript for toggling the info section
 
+  const infoIcon = document.getElementById('info-icon');
+  const infoContainer = document.getElementById('info-container');
+  const calculator = document.querySelector('.calculator');
+  // Toggle the info section on icon click
+  infoIcon.addEventListener(
+    'click',
+    (info = () => {
+      if (infoContainer.style.display === 'block') {
+        infoContainer.style.display = 'none'; // Hide info
+      } else {
+        infoContainer.style.display = 'block';
+      }
+    })
+  );
   // Dark Mode Toggle
   darkButton.addEventListener(
     'click',
