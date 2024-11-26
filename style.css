@@ -33,7 +33,7 @@ body {
     width: 55%;
     background: #ffffff;
     border-radius: 1rem;
-    overflow-x:scroll;
+    overflow-Y:scroll;
     box-shadow: inset 1.5rem 2rem 1rem rgba(0, 0, 0, 0.2);
 }
 .header{
