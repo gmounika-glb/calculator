@@ -11,29 +11,33 @@
 
 <body>
     <div class="container">
-        <div class="keyboard-shortcuts">
-            <div class="header">Keyboard Shortcuts:</div>
-            <ol type="dot">
-                <li class="key-list"><strong class="key-item">m, M</strong><span class="colon"> : </span class="key-dis"><span></span>Toggle the dark and light mood.</li>
-                <li class="key-list"><strong class="key-item">0-9</strong><span class="colon"> : </span class="key-dis"><span></span>Access the numbers.</li>
-                <li class="key-list"><strong class="key-item">+, -, *, /</strong><span class="colon"> : </span class="key-dis"><span></span>will perform the sum, sub, mul, div operations</li>
-                <li class="key-list"><strong class="key-item">h, H</strong><span class="colon"> : </span class="key-dis"><span></span>Showing history.</li>
-                <li class="key-list"><strong class="key-item">Esc</strong><span class="colon"> : </span class="key-dis"><span></span>Closing history button</li>
-                <li class="key-list"><strong class="key-item">BackSpace</strong><span class="colon"> : </span class="key-dis"><span></span>Toggle the dark and light mood</li>
-                <li class="key-list"><strong class="key-item">Delete</strong><span class="colon"> : </span class="key-dis"><span></span>Clear the display</li>
-                <li class="key-list"><strong class="key-item">equal</strong><span class="colon"> : </span class="key-dis"><span></span>will perform operation</li>
-            </ul>
-        </div>
         <div class="calculator">
             <!-- Menu (Dark Mode and History Buttons) -->
             <div class="menu">
                 <div class="history" id="history" aria-label="View History">
                     <i class="bx bx-history"></i>
                 </div>
+                <div class="info" id="info-icon" data-value="i" aria-label="View Shortcut Keys">
+                    <i class="bx bx-info-circle" id="info-icon"></i>
+                </div>
+                
                 <div class="dark dark-mode" id="dark" aria-label="Toggle Dark Mode">
                     <i class="bx bx-moon"></i>
                 </div>
             </div>
+            <!-- Info Section -->
+    <div class="info-container" id="info-container">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+            <li><strong>Enter:</strong> Calculate result</li>
+            <li><strong>Backspace:</strong> Delete last character</li>
+            <li><strong>Delete:</strong> Clear all input</li>
+            <li><strong>H/h:</strong> View calculation history</li>
+            <li><strong>M/m:</strong> Theme Toggle</li>
+            <li><strong>Escape:</strong> Clear history</li>
+            <li><strong>I/i</strong> Info</li>
+        </ul>
+    </div>
 
             <!-- Display -->
             <div class="display" id="display" aria-live="polite" tabindex="0">
