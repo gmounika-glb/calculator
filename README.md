@@ -30,4 +30,8 @@ This is a simple calculator project built using HTML, CSS, and JavaScript. The c
 - CSS
 - JavaScript
 
----
+## Installation:
+
+1. Clone the repository:
+   `bash
+   git clone https://gmounika-glb.github.io/calculator/
